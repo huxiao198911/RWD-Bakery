@@ -1,0 +1,121 @@
+@import url("desktop.css");
+
+/* desktop styles */
+
+@media screen and (min-width:992px) {
+    /* global styles */
+    body {
+        font-size: 1.1rem;
+    }
+    h1 {
+        font-size: 2.2rem;
+    }
+    h2 {
+        font-size: 1.6rem;
+    }
+    p {
+        font-size: 1.1rem;
+    }
+    /* header styles */
+    header .container {
+        display: block;
+        position: relative;
+        margin: 2rem 0;
+    }
+    header .container::before {
+        margin: 0 auto;
+    }
+    header .container nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 1rem 0;
+    }
+    header nav ul li:nth-child(4) {
+        border: none;
+        margin-right: 7rem;
+    }
+    header nav ul li a {
+        font-size: 1.1rem;
+    }
+    /* slider styles */
+    section.slider {
+        min-width: 992px;
+    }
+    /* main products styles */
+    .products .img-group {
+        margin-bottom: 5vw;
+    }
+    .products .img-group>div,
+    .products .img-group>div:nth-child(1) {
+        width: 21%;
+        height: 49%;
+    }
+    .products .img-group>div:nth-child(4),
+    .products .img-group>div:nth-child(8) {
+        display: block;
+    }
+    .products div.hover {
+        width: 19%;
+        height: 49%;
+    }
+    /* main testimonial styles */
+    main .testimonial {
+        height: 25vw;
+    }
+    .testimonial::before {
+        width: 24%;
+        height: 30vw;
+        top: -1rem;
+        left: 3rem;
+    }
+    main .testimonial>div h2 {
+        left: 25%;
+    }
+    main .testimonial>div p {
+        top: 25%;
+    }
+    /* main services styles */
+    .services .details+div article.details {
+        width: 22%;
+    }
+    /* main about styles */
+    main .about {
+        text-align: left;
+        position: relative;
+    }
+    main .about div:nth-child(1)::after {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    main .about div:nth-child(1) {
+        margin: 2rem;
+        padding-right: 1rem;
+        width: 40%;
+        float: left;
+    }
+    main .about div:nth-child(2),
+    main .about form {
+        width: 40%;
+        float: right;
+    }
+    main .about div:nth-child(2) {
+        margin: 2rem 0 2rem 3rem;
+    }
+    main .about form {
+        margin: 0;
+    }
+    main .about form input[type="email"] {
+        width: 58%;
+    }
+    main .about form input[type="submit"] {
+        width: 30%;
+    }
+    /* footer */
+    footer .container div {
+        width: 20%;
+    }
+}

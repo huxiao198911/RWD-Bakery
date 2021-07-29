@@ -1,0 +1,598 @@
+@import url("reset.css");
+
+/* start fonts and icon fonts */
+
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('fonts/opensans-regular-webfont.woff2') format('woff2'), url('fonts/opensans-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserratbold';
+    src: url('fonts/montserrat-bold-webfont.woff2') format('woff2'), url('fonts/montserrat-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserratregular';
+    src: url('fonts/montserrat-regular-webfont.woff2') format('woff2'), url('fonts/montserrat-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src: url('fonts/icon-fonts/icomoon.eot?dp23pi');
+    src: url('fonts/icomoon.eot?dp23pi#iefix') format('embedded-opentype'), url('fonts/icon-fonts/icomoon.ttf?dp23pi') format('truetype'), url('fonts/icon-fonts/icomoon.woff?dp23pi') format('woff'), url('fonts/icon-fonts/icomoon.svg?dp23pi#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* end fonts and icon fonts*/
+
+
+/* global styles */
+
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    font-family: 'open_sansregular', sans-serif;
+}
+
+h1,
+h2 {
+    font-family: 'montserratbold', sans-serif;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 1.3rem;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-size: 1.1rem;
+}
+
+p {
+    font-family: 'open_sansregular', sans-serif;
+    font-size: 0.8rem;
+}
+
+a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 0.8rem;
+    display: block;
+}
+
+
+/* Mobile first: default styles */
+
+
+/* start header */
+
+header {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+header .container {
+    margin: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+header .container h1 {
+    display: none;
+}
+
+header .container::before {
+    content: '';
+    display: block;
+    width: 90px;
+    height: 50px;
+    background: url('../images/icons-and-logos/logo_secondary.png') no-repeat;
+    background-size: contain;
+}
+
+
+/* hambuger nav bar */
+
+#showMenuLabel {
+    display: none;
+}
+
+#showMenu {
+    cursor: pointer;
+    position: absolute;
+    top: 7px;
+    right: -4px;
+    width: 2rem;
+    height: 2rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+#showMenu::after {
+    font-family: 'icomoon';
+    content: '\e9bd';
+    display: block;
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 2rem;
+    color: #684F40;
+    background-color: #FFF;
+    box-shadow: 1px 0 2px #696969, 0 1px 2px #696969, -1px 0 2px #696969, 0 -1px 2px #696969;
+}
+
+#showMenu:checked+ul {
+    right: 2rem;
+    opacity: 1;
+}
+
+
+/* nav */
+
+header .container nav {
+    position: relative;
+}
+
+header nav ul {
+    width: 200px;
+    height: 11rem;
+    line-height: 1.7;
+    background-color: #333;
+    position: absolute;
+    top: 10px;
+    right: -200px;
+    opacity: 0;
+    transition: right 0.5s ease-in;
+}
+
+header nav ul li {
+    padding: 0 1rem;
+    border-bottom: 1px solid #FFF;
+}
+
+header nav ul li:last-child {
+    border-bottom: none;
+}
+
+header nav ul li:first-child a,
+header nav ul li a:hover {
+    color: #FDB822;
+}
+
+
+/* end header */
+
+
+/* slider */
+
+section.slider {
+    width: 100vw;
+    max-width: 512px;
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+section.slider div img {
+    display: block;
+    width: 130vw;
+    margin-left: -15vw;
+}
+
+.slider div:nth-child(2) {
+    width: 100%;
+    color: #FFF;
+    text-align: center;
+    line-height: 1.8;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+}
+
+.slider div:nth-child(2)>h1 {
+    text-shadow: 1px 1px 5px #ccc;
+}
+
+.slider div:nth-child(2)>p {
+    text-shadow: 1px 1px 3px #333;
+}
+
+
+/* main>products */
+
+
+/* general heading, paragraphs and middle lines styles of the whole page */
+
+section .details {
+    margin: 3rem 3rem 1rem 3rem;
+    text-align: center;
+}
+
+section .details h2 {
+    color: #684F40;
+}
+
+section .details p {
+    line-height: 1.6;
+    color: #333;
+}
+
+section .details ul {
+    display: flex;
+    justify-content: center;
+    margin: 0.5rem 0;
+}
+
+section .details ul li span {
+    display: inline-block;
+    width: 3rem;
+    height: 2px;
+    background: #ccc;
+}
+
+section .details ul li:nth-child(2) span {
+    background-color: #FDB822;
+}
+
+section .details>span {
+    display: inline-block;
+    width: 3rem;
+    height: 2px;
+    background-color: #FDB822;
+}
+
+.products .details+div {
+    position: relative;
+}
+
+
+/* products each product styles */
+
+.products .img-group {
+    width: 90%;
+    height: 50vw;
+    margin: 0 auto;
+    padding: 2vw;
+    border: 2px solid #333;
+    margin-bottom: 1rem;
+}
+
+.products .hover {
+    opacity: 0;
+}
+
+.products .img-group>div:nth-child(1) {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.products .img-group>div:nth-child(1) a img {
+    width: 100%;
+    height: auto;
+    margin-top: -10vw;
+}
+
+.products .img-group>div:nth-child(n+2) {
+    display: none;
+}
+
+
+/* general circles styels of the whole page */
+
+.products>ul,
+.testimonial ul {
+    display: flex;
+    justify-content: center;
+}
+
+.products>ul li,
+.testimonial ul li {
+    margin: 0 2px;
+    text-align: center;
+}
+
+.products>ul li a,
+.testimonial ul li a {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #684F40;
+    border-radius: 50%;
+}
+
+.products>ul li a span,
+.testimonial ul li a span {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 2px;
+}
+
+.products>ul li a.active {
+    border-color: #FDB822;
+}
+
+.products>ul li a.active span {
+    background-color: #FDB822;
+}
+
+.products>ul+div {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.products>ul+div a {
+    display: inline;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    color: #684F40;
+    padding: 1rem 2rem;
+    border: 2px solid #684F40;
+}
+
+
+/* main> testimonial*/
+
+main .testimonial {
+    width: 100%;
+    height: 100vw;
+    background: url('../images/bg-2.jpg') no-repeat;
+    background-position: right;
+    position: relative;
+    margin-top: 8rem;
+    margin-bottom: 5rem;
+}
+
+.testimonial::before {
+    content: '';
+    position: absolute;
+    top: -1.5rem;
+    left: 3rem;
+    width: 40%;
+    height: 50%;
+    border: 5px solid #FFF;
+    border-radius: 5px;
+    background: url('../images/testimonials/mTestimonial-3.jpg') no-repeat;
+    background-position: center;
+    background-size: 130% auto;
+    transform: rotate(-10deg);
+}
+
+main .testimonial>div {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(253, 184, 34, 0.8);
+    text-align: right;
+    overflow: hidden;
+    color: #684F40;
+}
+
+main .testimonial>div h2 {
+    margin: 40vw 10vw 9vw 10vw;
+    text-transform: none;
+}
+
+main .testimonial>div p {
+    font-family: 'montserratbold', sans-serif;
+    line-height: 2;
+    margin: 0 10vw;
+    font-weight: bold;
+}
+
+main .testimonial ul {
+    position: absolute;
+    bottom: 5%;
+    right: 10%;
+}
+
+.testimonial ul li a.active {
+    border-color: #684F40;
+}
+
+.testimonial ul li a.active span {
+    background-color: #684F40;
+}
+
+
+/* main>services -->see slider styles */
+
+main .services img {
+    display: block;
+    width: 30%;
+    height: auto;
+    margin: 1rem auto;
+    padding: 1rem;
+    border: 1px solid #684F40;
+    border-radius: 50%;
+}
+
+
+/* main >about */
+
+main .about {
+    width: 100%;
+    height: auto;
+    background-color: #333;
+    color: #ccc;
+    overflow: hidden;
+}
+
+main .about div {
+    margin: 2rem 2rem;
+    line-height: 2;
+}
+
+main .about form {
+    margin: 2rem 2rem;
+}
+
+main .about form input {
+    font-family: 'open_sansregular', sans-serif;
+    display: block;
+    width: 80%;
+    height: 3rem;
+    margin: 0 auto;
+    border-style: hidden;
+}
+
+main .about form input[type="email"] {
+    background-color: #333;
+    color: #CCC;
+    border: 1px solid #CCC;
+}
+
+main .about form input[type="submit"] {
+    background-color: #CCC;
+    color: #333;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+
+/* footer */
+
+footer {
+    width: 100%;
+    height: auto;
+    background-color: #222;
+    color: #FFF;
+    overflow: hidden;
+}
+
+footer .container {
+    position: relative;
+}
+
+footer .container::before {
+    display: block;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: -4rem;
+    right: -1rem;
+    z-index: 1;
+    content: '';
+    background: url('../images/icons-and-logos/logo-footer-background.png') no-repeat;
+    background-size: contain;
+}
+
+footer .container h1 {
+    display: none;
+}
+
+footer .container div {
+    margin: 3rem 2rem;
+    line-height: 2;
+    position: relative;
+    z-index: 2;
+}
+
+footer .container div p time:nth-child(2)::after {
+    content: '';
+    display: block;
+}
+
+footer .container #footerSocMed {
+    display: flex;
+}
+
+footer .container #footerSocMed li a {
+    font-size: 0;
+    font-family: 'icomoon';
+    margin-right: 0.5rem;
+}
+
+footer .container #footerSocMed li:nth-of-type(1) a::after {
+    font-size: 1.5rem;
+    content: '\ea91';
+}
+
+footer .container #footerSocMed li:nth-of-type(2) a::after {
+    font-size: 1.5rem;
+    content: '\ea9c';
+}
+
+footer .container #footerSocMed li:nth-of-type(3) a::after {
+    font-size: 1.5rem;
+    content: '\eac9';
+}
+
+footer .container #footerSocMed li:nth-of-type(4) {
+    display: none;
+}
+
+footer #footerContactUs a {
+    font-weight: normal;
+    text-transform: none;
+}
+
+footer #footerContactUs li:nth-child(1) a::before {
+    font-family: 'icomoon';
+    font-size: 1rem;
+    content: '\e942';
+    margin-right: 0.5rem;
+}
+
+footer #footerContactUs li:nth-child(2)::before {
+    font-family: 'icomoon';
+    font-size: 1rem;
+    content: '\e949';
+    margin-right: 0.5rem;
+}
+
+footer #footerContactUs li:nth-child(3) a::before {
+    font-family: 'icomoon';
+    font-size: 1rem;
+    content: '\ea83';
+    margin-right: 0.5rem;
+}
+
+footer #footerContactUs li:nth-child(4) a::before {
+    font-family: 'icomoon';
+    font-size: 1rem;
+    content: '\e9ca';
+    margin-right: 0.5rem;
+}
