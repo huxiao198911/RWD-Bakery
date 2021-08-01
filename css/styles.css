@@ -175,7 +175,7 @@ header .container nav {
 
 header nav ul {
     width: 200px;
-    height: 11rem;
+    height: 11.2rem;
     line-height: 1.7;
     background-color: #333;
     position: absolute;
@@ -206,7 +206,8 @@ header nav ul li a:hover {
 /* slider */
 
 section.slider {
-    width: 100vw;
+    width: 100%;
+    overflow: hidden;
     max-width: 512px;
     position: relative;
     margin-bottom: 3rem;
